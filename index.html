@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">E</div>
+          <div>
+            <p class="eyebrow">Workspace</p>
+            <h2>Elevate</h2>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-item active">
+            <span class="nav-icon">⌂</span>
+            Overview
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">◫</span>
+            Employees
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">▣</span>
+            Analytics
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">⎈</span>
+            Operations
+          </button>
+          <button class="nav-item">
+            <span class="nav-icon">⚑</span>
+            Performance
+          </button>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="eyebrow">Live status</p>
+          <div class="status-row">
+            <span class="dot green"></span>
+            <span>128 online</span>
+          </div>
+          <div class="status-row">
+            <span class="dot orange"></span>
+            <span>12 on route</span>
+          </div>
+          <div class="status-row">
+            <span class="dot blue"></span>
+            <span>7 pending review</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Good morning</p>
+            <h1>Employee Dashboard</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <button class="ghost-btn">This week</button>
+            <button class="primary-btn">Export report</button>
+          </div>
+        </header>
+
+        <section class="stats-grid" id="statsGrid"></section>
+
+        <section class="main-grid">
+          <div class="panel performance-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Performance</p>
+                <h3>Team productivity</h3>
+              </div>
+              <button class="text-btn">View details</button>
+            </div>
+
+            <div class="performance-chart">
+              <div class="chart-bars" id="chartBars"></div>
+            </div>
+          </div>
+
+          <div class="panel map-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Map tracking</p>
+                <h3>Field activity</h3>
+              </div>
+              <span class="chip success">Live</span>
+            </div>
+
+            <div class="map-box">
+              <div class="map-grid"></div>
+              <div class="route route-1"></div>
+              <div class="route route-2"></div>
+              <div class="route route-3"></div>
+
+              <div class="marker marker-1">
+                <span>A</span>
+              </div>
+              <div class="marker marker-2">
+                <span>B</span>
+              </div>
+              <div class="marker marker-3">
+                <span>C</span>
+              </div>
+              <div class="marker marker-4">
+                <span>D</span>
+              </div>
+            </div>
+
+            <div class="mini-legend">
+              <div><span class="dot green"></span> Active</div>
+              <div><span class="dot purple"></span> In transit</div>
+              <div><span class="dot orange"></span> Review</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Performance analysis</p>
+                <h3>Goal completion</h3>
+              </div>
+              <button class="text-btn">Quarterly</button>
+            </div>
+
+            <div class="progress-list" id="progressList"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Attendance</p>
+                <h3>Weekly summary</h3>
+              </div>
+              <button class="text-btn">Updated now</button>
+            </div>
+
+            <div class="sparkline-wrap">
+              <svg viewBox="0 0 320 140" preserveAspectRatio="none" class="sparkline" aria-label="attendance chart">
+                <defs>
+                  <linearGradient id="lineFill" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.4" />
+                    <stop offset="100%" stop-color="#7c5cff" stop-opacity="0.04" />
+                  </linearGradient>
+                </defs>
+                <path class="area-path" d="M0,105 C35,95 52,72 76,83 S115,45 135,68 S175,16 200,42 S240,74 260,58 S300,32 320,28 L320,140 L0,140 Z" />
+                <path class="line-path" d="M0,105 C35,95 52,72 76,83 S115,45 135,68 S175,16 200,42 S240,74 260,58 S300,32 320,28" />
+              </svg>
+              <div class="ticks">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel activity-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Team activity</p>
+                <h3>Recent updates</h3>
+              </div>
+            </div>
+
+            <ul class="activity-list" id="activityList"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
